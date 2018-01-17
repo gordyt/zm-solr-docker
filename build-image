@@ -1,2 +1,6 @@
 #!/bin/bash
-docker build -f Dockerfile -t zimbra/zm-solr-docker:latest $(dirname $0)
+cd=$(dirname $0)
+BUILD=$(cat ${cd}/BUILD)
+echo "Building image using zm-solr-docker-deps from $BUILD..."
+docker build --quiet --build-arg BUILD=${BUILD} -f Dockerfile -t zimbra/zm-solr-docker:latest $(dirname $0)
+docker tag zimbra/zm-solr-docker:latest zimbra/zm-solr-docker:${BUILD}
