@@ -1,3 +1,3 @@
 ### Introduction
 
-SOLR 6.6 build with Zimbra Extensions
+SOLR 7.2 build with Zimbra Extensions
